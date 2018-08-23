@@ -1,0 +1,15 @@
+h3{
+  text-align: center;
+}
+.box{
+  height: 300px;
+  width: 300px;
+  border: solid black 2px;
+  display: inline-block;
+}
+.ourRow {
+
+}
+#grid {
+  margin-left: 300px;
+}
