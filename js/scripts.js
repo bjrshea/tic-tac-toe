@@ -18,7 +18,6 @@ Players.prototype.checkForWin = function(currentChoice) {
     ["A3","B2","C1"],
     ["A1","B2","C3"]
   ];
-
   for(var i = 0; i < possibleWins.length; i++) {
     for(var j = 0; j < possibleWins[i].length; j++) {
       if(currentChoice === possibleWins[i][j]) {
@@ -26,7 +25,6 @@ Players.prototype.checkForWin = function(currentChoice) {
       }
     }
   }
-
   for(var y = 0; y < board.length; y++) {
     for(var x = 0; x < board[y].length; x++) {
       if(board[y][x] === this.mark) {
@@ -40,20 +38,12 @@ Players.prototype.checkForWin = function(currentChoice) {
       numberOfMark = 0;
     }
   }
-
 }
 
 var players = [];
 var playerChoice;
 var board = [
-  [,,],
-  [,,],
-  [,,],
-  [,,],
-  [,,],
-  [,,],
-  [,,],
-  [,,]
+  [,,],[,,],[,,],[,,],[,,],[,,],[,,],[,,]
 ];
 
 //User Interface Logic
