@@ -1,15 +1,48 @@
-h3{
+body {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
+h2{
   text-align: center;
+  font-weight: bold;
 }
 .box{
-  height: 300px;
-  width: 300px;
-  border: solid black 2px;
+  height: 200px;
+  width: 200px;
+  border: 3px solid #000;
   display: inline-block;
 }
-.ourRow {
-
-}
 #grid {
-  margin-left: 300px;
+  text-align: center;
+}
+#A1 {
+  border-top-left-radius: 4px;
+}
+#A3 {
+  border-top-right-radius: 4px;
+}
+#C1 {
+  border-bottom-left-radius: 4px;
+}
+#C3 {
+  border-bottom-right-radius: 4px;
+}
+#winner-banner {
+  display: none;
+}
+#winner-image {
+  width: 608px;
+  height: 608px;
+  border: 3px solid #000;
+  border-radius: 4px;
+  margin: 0 auto;
+}
+#play-again-btn {
+  display: block;
+  margin: 0 auto;
+  background-color: #35B83E;
+  border: 3px solid #000;
+  font-weight: bold;
+}
+#play-again-btn:hover, #play-again-btn:active {
+  background-color: #1F7225;
 }

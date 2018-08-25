@@ -5,33 +5,6 @@ function Players(player, mark) {
   this.mark = mark,
   this.win = false
 }
-// function checkForWin(currentChoice) {
-//   var possibleWins = [
-//     ["A1","A2","A3"],
-//     ["B1","B2","B3"],
-//     ["C1","C2","C3"],
-//     ["A1","B1","C1"],
-//     ["A2","B2","C2"],
-//     ["A3","B3","C3"],
-//     ["A3","B2","C1"],
-//     ["A1","B2","C3"]
-//   ];
-//
-//   for(var i = 0; i < possibleWins.length; i++) {
-//     for(var j = 0; j < possibleWins[i].length; j++) {
-//       if(currentChoice === possibleWins[i][j]) {
-//         board[i][j] = currentChoice;
-//       }
-//     }
-//   }
-//
-//   for(var y = 0; y < board.length; y++) {
-//     if(board[y].length == 3) {
-//       console.log(board[y] + " = win");
-//     }
-//   }
-//   console.log(board);
-// }
 
 Players.prototype.checkForWin = function(currentChoice) {
   var numberOfMark = 0;
@@ -102,9 +75,15 @@ $(document).ready(function() {
             playerChoice = $(this).attr("id");
             players[i].checkForWin(playerChoice);
             if(players[i].win === true) {
-              console.log("You Win X");
+              $("#winner-image").css({
+                "background-image" : "url('img/x.png')",
+                "background-size" : "cover"
+              });
+              $("#grid").hide();
+              $("#winner-banner").show();
+            } else {
+              players[i].active = false;
             }
-            players[i].active = false;
           } else {
             $(this).css({
               "background-image" : "url('img/oh.png')",
@@ -113,14 +92,24 @@ $(document).ready(function() {
             playerChoice = $(this).attr("id");
             players[i].checkForWin(playerChoice);
             if(players[i].win === true) {
-              console.log("You Win O");
+              $("#winner-image").css({
+                "background-image" : "url('img/oh.png')",
+                "background-size" : "cover"
+              });
+              $("#grid").hide();
+              $("#winner-banner").show();
+            } else {
+              players[i].active = false;
             }
-            players[i].active = false;
           }
         } else if (players[i].active === false) {
           players[i].active = true;
         }
       }
     }
+  });
+
+  $("#play-again-btn").click(function() {
+    location.reload();
   });
 });
