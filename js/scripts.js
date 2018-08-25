@@ -59,14 +59,14 @@ $(document).ready(function() {
         if(players[i].active === true) {
           if(players[i].player === "player 1") {
             $(this).css({
-              "background-image" : "url('img/x.png')",
+              "background-image" : "url('img/X.png')",
               "background-size" : "cover"
             });
             playerChoice = $(this).attr("id");
             players[i].checkForWin(playerChoice);
             if(players[i].win === true) {
               $("#winner-image").css({
-                "background-image" : "url('img/x.png')",
+                "background-image" : "url('img/X.png')",
                 "background-size" : "cover"
               });
               $("#grid").hide();
